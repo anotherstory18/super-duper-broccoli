@@ -1,0 +1,7 @@
+<%- include('partials/header') %>
+<h2>Doctor Availability</h2>
+<form class="inline"><select name="status"><option value="">All</option><option <%= status==='Available'?'selected':'' %>>Available</option><option <%= status==='Busy'?'selected':'' %>>Busy</option><option <%= status==='Off Duty'?'selected':'' %>>Off Duty</option></select><button class="btn">Filter</button></form>
+<table><tr><th>Name</th><th>Specialization</th><th>Department</th><th>Room</th><th>Shift</th><th>Status</th><th>Update</th></tr>
+<% doctors.forEach(d=> { %><tr><td><%= d.name %></td><td><%= d.specialization %></td><td><%= d.department %></td><td><%= d.room %></td><td><%= d.shift %></td><td><span class="badge"><%= d.status %></span></td><td><form method="post" action="/doctors/<%= d.id %>/status" class="inline"><select name="status"><option>Available</option><option>Busy</option><option>Off Duty</option></select><button class="btn">Save</button></form></td></tr><% }) %>
+</table>
+<%- include('partials/footer') %>

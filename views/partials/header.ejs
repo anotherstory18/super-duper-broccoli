@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediFlow City Hospital</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <% if (currentUser) { %>
+  <aside class="sidebar">
+    <div class="logo">🏥 <span>MediFlow</span></div>
+    <a href="/">Home</a>
+    <a href="/admin/dashboard">Admin Dashboard</a>
+    <a href="/reception/dashboard">Reception</a>
+    <a href="/doctor/dashboard">Doctor Dashboard</a>
+    <a href="/patients/register">Register Patient</a>
+    <a href="/patients">Patient List</a>
+    <a href="/queue">Queue</a>
+    <a href="/live-dashboard">Live Dashboard</a>
+    <a href="/doctors">Doctors</a>
+    <a href="/beds">Beds</a>
+    <a href="/billing">Billing</a>
+    <a href="/reports">Reports</a>
+    <a href="/settings">Settings</a>
+    <a href="/logout">Logout</a>
+  </aside>
+  <% } %>
+  <main class="main">
+    <header class="topbar">
+      <div><strong>MediFlow City Hospital</strong></div>
+      <div id="liveTime"></div>
+    </header>

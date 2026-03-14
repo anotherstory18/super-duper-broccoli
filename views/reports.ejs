@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<h2>Reports</h2>
+<div class="grid cards">
+  <div class="card">Total Patients <strong><%= report.patientCount %></strong></div>
+  <div class="card">Emergency Cases <strong><%= report.emergencyCases %></strong></div>
+  <div class="card">Revenue <strong>₹<%= report.revenue.toFixed(2) %></strong></div>
+  <div class="card">Bed Utilization <strong><%= report.bedUtilization %>%</strong></div>
+</div>
+<canvas id="deptChart" class="card"></canvas>
+<canvas id="workloadChart" class="card"></canvas>
+<script>window.reportData = <%- JSON.stringify(report) %></script>
+<%- include('partials/footer') %>

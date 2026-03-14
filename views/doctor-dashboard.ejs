@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<h2>Doctor Dashboard - <%= doctor.name %> (<%= doctor.department %>)</h2>
+<p>Today's completed consultations: <strong><%= completedToday %></strong></p>
+<table><tr><th>Token</th><th>Patient</th><th>Status</th><th>Action</th></tr>
+<% queue.forEach(q=> { %>
+<tr><td><%= q.token %></td><td><%= q.patientName %></td><td><span class="badge"><%= q.status %></span></td><td>
+<form method="post" action="/doctor/queue/<%= q.id %>/status" class="inline">
+<select name="status"><option>called</option><option>in consultation</option><option>completed</option></select>
+<input name="note" placeholder="Consultation note" />
+<button class="btn">Update</button></form></td></tr><% }) %></table>
+<%- include('partials/footer') %>

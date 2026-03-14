@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<h2>Admin Dashboard</h2>
+<div class="grid cards">
+  <div class="card">Patients Today <strong><%= stats.patientsToday %></strong></div>
+  <div class="card">Revenue Today <strong>₹<%= stats.totalRevenueToday.toFixed(2) %></strong></div>
+  <div class="card">Active Doctors <strong><%= stats.activeDoctors %></strong></div>
+  <div class="card">Available Beds <strong><%= stats.availableBeds %></strong></div>
+  <div class="card">Occupied Beds <strong><%= stats.occupiedBeds %></strong></div>
+  <div class="card">OPD Queue Load <strong><%= stats.opdQueueLoad %></strong></div>
+  <div class="card">Emergency Count <strong><%= stats.emergencyCount %></strong></div>
+  <div class="card">Receipts Today <strong><%= stats.receiptsToday %></strong></div>
+</div>
+<canvas id="adminChart" class="card"></canvas>
+<script>window.adminStats = <%- JSON.stringify(stats) %></script>
+<%- include('partials/footer') %>

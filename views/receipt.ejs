@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<h2>Receipt Generation</h2>
+<% if (!receipt) { %>
+<section class="card">
+  <p>Bill Reference: <%= bill.id %> | Patient: <%= bill.patientName %> (<%= bill.patientId %>)</p>
+  <p>Total Amount: ₹<%= bill.total.toFixed(2) %></p>
+  <form method="post" action="/receipt/new/<%= bill.id %>" class="inline">
+    <select name="paymentMode"><option>Cash</option><option>UPI</option><option>Card</option></select>
+    <select name="paymentStatus"><option>Paid</option><option>Pending</option></select>
+    <button class="btn">Generate Receipt</button>
+  </form>
+</section>
+<% } else { %>
+<section class="card" id="printArea">
+  <p>Receipt No: <strong><%= receipt.receiptNumber %></strong></p>
+  <p>Patient: <%= receipt.patientName %> (<%= receipt.patientId %>)</p>
+  <p>Amount Paid: ₹<%= receipt.amountPaid.toFixed(2) %></p>
+  <p>Mode: <%= receipt.paymentMode %> | Status: <%= receipt.paymentStatus %></p>
+  <p>Date: <%= new Date(receipt.paymentDate).toLocaleString() %></p>
+</section>
+<button class="btn" onclick="window.print()">Print Receipt</button>
+<a class="btn" href="/receipt/pdf/<%= receipt.id %>">Download PDF</a>
+<% } %>
+<%- include('partials/footer') %>

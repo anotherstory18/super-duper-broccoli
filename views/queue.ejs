@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+<h2>Smart OPD Queue Management</h2>
+<form class="inline"><select name="department"><option value="">All Departments</option><% departments.forEach(d=> { %><option <%= selectedDepartment===d?'selected':'' %>><%= d %></option><% }) %></select><button class="btn">Filter</button></form>
+<table><tr><th>Token</th><th>Patient</th><th>Department</th><th>Emergency</th><th>Est. wait</th><th>Status</th><th>Next</th></tr>
+<% queue.forEach(q=> { %>
+<tr><td><%= q.token %></td><td><%= q.patientName %></td><td><%= q.department %></td><td><%= q.emergency?'⚠️':'' %></td><td><%= q.estimatedWait %> min</td><td><span class="badge"><%= q.status %></span></td><td><form method="post" action="/queue/<%= q.id %>/next"><button class="btn">Next Patient</button></form></td></tr>
+<% }) %>
+</table>
+<%- include('partials/footer') %>

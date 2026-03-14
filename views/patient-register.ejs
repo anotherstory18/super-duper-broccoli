@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<h2>Patient Registration</h2>
+<form method="post" action="/patients/register" class="card form-grid">
+<input name="name" placeholder="Full name" required />
+<input name="age" type="number" placeholder="Age" required />
+<select name="gender"><option>Male</option><option>Female</option><option>Other</option></select>
+<input name="phone" placeholder="Phone number" required />
+<input name="address" placeholder="Address" required />
+<input name="symptoms" placeholder="Symptoms" required />
+<select name="department"><% departments.forEach(d=> { %><option><%= d %></option><% }) %></select>
+<select name="emergency"><option value="no">Emergency: No</option><option value="yes">Emergency: Yes</option></select>
+<button class="btn">Register & Generate OPD Slip</button>
+</form>
+<%- include('partials/footer') %>

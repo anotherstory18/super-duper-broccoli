@@ -1,0 +1,7 @@
+<%- include('partials/header') %>
+<h2>Receptionist Dashboard</h2>
+<div class="grid two">
+  <section class="card"><h3>Recent Patients</h3><ul><% patients.forEach(p=>{ %><li><%= p.id %> - <%= p.name %> (<%= p.department %>)</li><% }) %></ul></section>
+  <section class="card"><h3>Recent Queue Tokens</h3><ul><% queue.forEach(q=>{ %><li><%= q.token %> - <%= q.patientName %> [<%= q.status %>]</li><% }) %></ul></section>
+</div>
+<%- include('partials/footer') %>
