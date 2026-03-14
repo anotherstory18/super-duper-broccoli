@@ -1,0 +1,8 @@
+<%- include('partials/header') %>
+<h2>Emergency Bed Availability</h2>
+<form method="post" action="/beds/add" class="inline card"><input name="label" placeholder="Bed label" required><select name="type"><option>ICU</option><option>Emergency</option><option>General Ward</option></select><select name="status"><option value="available">available</option><option value="occupied">occupied</option></select><button class="btn">Add Bed</button></form>
+<table><tr><th>Label</th><th>Type</th><th>Status</th><th>Action</th></tr>
+<% beds.forEach(b=> { %><tr><td><%= b.label %></td><td><%= b.type %></td><td><span class="badge <%= b.status==='available'?'green':'red' %>"><%= b.status %></span></td><td><form method="post" action="/beds/<%= b.id %>/status" class="inline"><select name="status"><option>available</option><option>occupied</option></select><button class="btn">Update</button></form></td></tr><% }) %>
+</table>
+<p>Alert threshold: <%= threshold %> available beds</p>
+<%- include('partials/footer') %>

@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<section class="card small">
+  <h2>Role-Based Login</h2>
+  <% if (error) { %><p class="alert-red"><%= error %></p><% } %>
+  <form method="post" action="/login" class="form-grid">
+    <input name="username" placeholder="Username" required />
+    <input name="password" type="password" placeholder="Password" required />
+    <button class="btn" type="submit">Login</button>
+  </form>
+</section>
+<%- include('partials/footer') %>

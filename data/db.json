@@ -1,0 +1,32 @@
+{
+  "users": [
+    {"id":"U1","username":"admin","password":"admin123","role":"admin","name":"Aarav Sharma"},
+    {"id":"U2","username":"reception","password":"recep123","role":"receptionist","name":"Nisha Verma"},
+    {"id":"U3","username":"doctor1","password":"doc123","role":"doctor","name":"Dr. Arjun Mehta","department":"General OPD"},
+    {"id":"U4","username":"doctor2","password":"doc123","role":"doctor","name":"Dr. Sana Khan","department":"Cardiology"}
+  ],
+  "patients": [
+    {"id":"P1001","name":"Rahul Singh","age":34,"gender":"Male","phone":"9876543210","address":"Sector 12","symptoms":"Fever, headache","department":"General OPD","emergency":false,"createdAt":"2026-03-14T09:15:00.000Z"},
+    {"id":"P1002","name":"Priya Das","age":9,"gender":"Female","phone":"9988776655","address":"River Road","symptoms":"Cough","department":"Pediatrics","emergency":false,"createdAt":"2026-03-14T09:45:00.000Z"}
+  ],
+  "queue": [
+    {"id":"Q1","patientId":"P1001","patientName":"Rahul Singh","department":"General OPD","token":"G-001","status":"waiting","emergency":false,"estimatedWait":10,"note":""},
+    {"id":"Q2","patientId":"P1002","patientName":"Priya Das","department":"Pediatrics","token":"P-001","status":"called","emergency":false,"estimatedWait":5,"note":""}
+  ],
+  "doctors": [
+    {"id":"D1","name":"Dr. Arjun Mehta","specialization":"Internal Medicine","department":"General OPD","room":"101","status":"Available","shift":"08:00-14:00"},
+    {"id":"D2","name":"Dr. Sana Khan","specialization":"Cardiology","department":"Cardiology","room":"205","status":"Busy","shift":"10:00-18:00"},
+    {"id":"D3","name":"Dr. Vijay Nair","specialization":"ENT","department":"ENT","room":"116","status":"Off Duty","shift":"09:00-15:00"}
+  ],
+  "beds": [
+    {"id":"B1","label":"ICU-1","type":"ICU","status":"occupied"},
+    {"id":"B2","label":"ICU-2","type":"ICU","status":"available"},
+    {"id":"B3","label":"ER-1","type":"Emergency","status":"occupied"},
+    {"id":"B4","label":"ER-2","type":"Emergency","status":"available"},
+    {"id":"B5","label":"GW-1","type":"General Ward","status":"available"},
+    {"id":"B6","label":"GW-2","type":"General Ward","status":"occupied"}
+  ],
+  "bills": [],
+  "receipts": [],
+  "settings": {"bedAlertThreshold": 2, "queueAlertThreshold": 8}
+}

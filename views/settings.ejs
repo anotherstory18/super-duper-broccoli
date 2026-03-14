@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+<h2>Settings / Demo Data</h2>
+<form method="post" action="/settings" class="card form-grid">
+<label>Bed alert threshold <input type="number" name="bedAlertThreshold" value="<%= settings.bedAlertThreshold %>"></label>
+<label>Queue alert threshold <input type="number" name="queueAlertThreshold" value="<%= settings.queueAlertThreshold %>"></label>
+<button class="btn">Save Settings</button>
+</form>
+<p>Demo data is pre-seeded for doctors, beds, and patients.</p>
+<%- include('partials/footer') %>

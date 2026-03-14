@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<section class="card small" id="printArea">
+  <h2>OPD Slip</h2>
+  <p>Patient: <strong><%= patient.name %></strong> (<%= patient.id %>)</p>
+  <p>Department: <%= patient.department %></p>
+  <p>Token: <strong><%= queueItem.token %></strong></p>
+  <p>Emergency: <%= patient.emergency ? 'Yes' : 'No' %></p>
+  <p>Time: <%= new Date(patient.createdAt).toLocaleString() %></p>
+</section>
+<button class="btn" onclick="window.print()">Print Slip</button>
+<%- include('partials/footer') %>

@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<h2>Billing</h2>
+<form method="post" action="/billing" class="card form-grid">
+<input name="patientName" placeholder="Patient name" required>
+<input name="patientId" placeholder="Patient ID" required>
+<input name="consultationFee" type="number" placeholder="Consultation fee" value="300">
+<input name="labCharges" type="number" placeholder="Lab charges" value="0">
+<input name="medicineCharges" type="number" placeholder="Medicine charges" value="0">
+<input name="bedCharges" type="number" placeholder="Bed charges" value="0">
+<input name="emergencyCharges" type="number" placeholder="Emergency charges" value="0">
+<input name="otherCharges" type="number" placeholder="Other service charges" value="0">
+<button class="btn">Generate Bill & Continue to Receipt</button>
+</form>
+<%- include('partials/footer') %>

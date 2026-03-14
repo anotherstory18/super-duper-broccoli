@@ -1,0 +1,20 @@
+{
+  "name": "hospital-management-system",
+  "version": "1.0.0",
+  "description": "Smart Hospital Management, Live Queue & Emergency Bed Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "pdfkit": "^0.16.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

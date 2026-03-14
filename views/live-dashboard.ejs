@@ -1,0 +1,6 @@
+<%- include('partials/header') %>
+<h2>Live Hospital Dashboard</h2>
+<div id="liveAlert" class="alert-yellow"></div>
+<div class="grid cards" id="liveBoard"></div>
+<script>window.liveData = <%- JSON.stringify(db) %></script>
+<%- include('partials/footer') %>
